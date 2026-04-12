@@ -1,0 +1,235 @@
+{% comment %}
+  REJAL — Minimalist Monochrome FX Layer
+  Injects:
+    1. Noise texture overlay (paper-like quality, 2% opacity)
+    2. JS: section heading counter marks (editorial numbered sections)
+    3. JS: "→" arrow appended to CTA buttons
+    4. JS: oversized first-letter drop cap on product descriptions
+    5. JS: thin vertical rule between header logo and nav
+{% endcomment %}
+
+{% comment %} ── 1. NOISE TEXTURE OVERLAY ─────────────────────── {% endcomment %}
+<div
+  id="mm-noise"
+  aria-hidden="true"
+  role="presentation"
+  style="
+    position: fixed;
+    inset: 0;
+    background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 256 256%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22/%3E%3C/svg%3E');
+    opacity: 0.022;
+    pointer-events: none;
+    z-index: 9999;
+  "
+></div>
+
+{% comment %} ── 2. STYLES ────────────────────────────────────────── {% endcomment %}
+<style>
+  /* Inverted stats / featured-product sections */
+  .mm-inverted {
+    background-color: #000 !important;
+    color: #FFF !important;
+    background-image: repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 3px,
+      rgba(255,255,255,0.025) 3px,
+      rgba(255,255,255,0.025) 4px
+    ) !important;
+  }
+
+  .mm-inverted *,
+  .mm-inverted h2,
+  .mm-inverted h3,
+  .mm-inverted p {
+    color: rgba(255,255,255,0.85) !important;
+  }
+
+  .mm-inverted h2,
+  .mm-inverted h3 {
+    color: #FFF !important;
+  }
+
+  /* Editorial section number mark */
+  .mm-section-mark {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #525252;
+    margin-bottom: 20px;
+  }
+
+  /* CTA arrow */
+  .mm-arrow {
+    display: inline-block;
+    margin-left: 8px;
+    font-style: normal;
+    transition: transform 100ms;
+  }
+
+  .button:hover .mm-arrow,
+  [class*="button"]:hover .mm-arrow {
+    transform: translateX(4px);
+  }
+
+  /* Drop cap on product description first paragraph */
+  .mm-dropcap::first-letter {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 3.8em;
+    font-weight: 900;
+    line-height: 0.75;
+    float: left;
+    margin-right: 6px;
+    margin-top: 4px;
+    border: 2px solid #000;
+    padding: 4px 10px;
+    color: #000;
+  }
+
+  /* Section counter style */
+  .mm-counter {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    color: #525252;
+    text-transform: uppercase;
+  }
+
+  /* Page content above noise overlay */
+  #header-group,
+  main,
+  #MainContent,
+  footer { position: relative; z-index: 1; }
+
+  /* Thick rule class (injected between section heading and content) */
+  .mm-thick-rule {
+    display: block;
+    width: 48px;
+    height: 4px;
+    background: #000;
+    margin: 16px 0;
+  }
+
+  /* Inverted badge on announcement bar */
+  announcement-bar .mm-cursor,
+  .announcement-bar .mm-cursor {
+    display: inline-block;
+    width: 1px;
+    height: 0.9em;
+    background: #FFF;
+    vertical-align: middle;
+    margin-left: 2px;
+    animation: mm-blink 1.2s step-end infinite;
+  }
+
+  @keyframes mm-blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+  }
+</style>
+
+{% comment %} ── 3. JAVASCRIPT ─────────────────────────────────────── {% endcomment %}
+<script>
+(function monoFX() {
+  'use strict';
+
+  function ready(fn) {
+    if (document.readyState !== 'loading') { fn(); }
+    else { document.addEventListener('DOMContentLoaded', fn); }
+  }
+
+  ready(function () {
+
+    /* ─── Arrow on primary CTA buttons ──────────────────────────── */
+    var ctaBtns = document.querySelectorAll(
+      '.button--primary, [class*="button--primary"], .hero .button, .section--hero .button'
+    );
+    ctaBtns.forEach(function (btn) {
+      if (btn.dataset.mmDone) { return; }
+      btn.dataset.mmDone = '1';
+      var arrow = document.createElement('span');
+      arrow.className = 'mm-arrow';
+      arrow.setAttribute('aria-hidden', 'true');
+      arrow.textContent = '→';
+      btn.appendChild(arrow);
+    });
+
+    /* ─── Thick rule injected below section headings ─────────────── */
+    var headings = document.querySelectorAll(
+      '.section__heading, [class*="section__title"]'
+    );
+    headings.forEach(function (h) {
+      if (h.dataset.mmDone) { return; }
+      h.dataset.mmDone = '1';
+      var rule = document.createElement('span');
+      rule.className = 'mm-thick-rule';
+      rule.setAttribute('aria-hidden', 'true');
+      h.parentNode.insertBefore(rule, h.nextSibling);
+    });
+
+    /* ─── Blinking cursor in announcement bar ─────────────────────── */
+    var annBar = document.querySelector('announcement-bar, .announcement-bar');
+    if (annBar) {
+      var cursor = document.createElement('span');
+      cursor.className = 'mm-cursor';
+      cursor.setAttribute('aria-hidden', 'true');
+      annBar.appendChild(cursor);
+    }
+
+    /* ─── Drop cap on product description ────────────────────────── */
+    var productDesc = document.querySelector(
+      '.product__description p:first-of-type, ' +
+      '[class*="product-description"] p:first-of-type, ' +
+      '.product-information p:first-of-type'
+    );
+    if (productDesc) {
+      productDesc.classList.add('mm-dropcap');
+    }
+
+    /* ─── Invert the marquee / ticker section ────────────────────── */
+    var marquees = document.querySelectorAll('.marquee, [class*="marquee"]');
+    marquees.forEach(function (el) {
+      /* Already handled in CSS — ensure parent section doesn't override */
+      if (el.closest && el.closest('.section')) {
+        el.closest('.section').style.borderTop = 'none';
+      }
+    });
+
+    /* ─── Section reveal: fade up on scroll ──────────────────────── */
+    if ('IntersectionObserver' in window) {
+      var style = document.createElement('style');
+      style.textContent = [
+        '.mm-reveal { opacity: 0; transform: translateY(16px); ',
+        'transition: opacity 400ms, transform 400ms; }',
+        '.mm-revealed { opacity: 1; transform: none; }'
+      ].join('');
+      document.head.appendChild(style);
+
+      var targets = document.querySelectorAll(
+        '.product-card, .card, product-card, [class*="product-card"], ' +
+        '.blog-post-card, .collection-card'
+      );
+
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry, i) {
+          if (entry.isIntersecting) {
+            /* Stagger via JS delay */
+            setTimeout(function () {
+              entry.target.classList.add('mm-revealed');
+            }, (i % 6) * 60);
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      targets.forEach(function (el) {
+        el.classList.add('mm-reveal');
+        io.observe(el);
+      });
+    }
+
+  }); /* end ready */
+}());
+</script>
