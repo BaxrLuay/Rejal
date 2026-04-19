@@ -1,63 +1,80 @@
 {
   "sections": {
-    "hero": {
-      "type": "rich-text",
+    "image-banner": {
+      "type": "image-banner",
       "blocks": {
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Welcome to {{ shop.name }}",
+            "heading": "Built for the Faithful.",
             "heading_size": "h0"
           }
         },
-        "caption": {
-          "type": "caption",
-          "settings": {
-            "caption": "New arrivals now available",
-            "text_style": "subtitle",
-            "text_size": "large"
-          }
-        },
-        "text": {
+        "subheading": {
           "type": "text",
           "settings": {
-            "text": "<p>Discover our curated collection \u2014 crafted with quality and made to last.<\/p>",
-            "text_style": "body"
+            "text": "Below-knee athletic shorts crafted for Muslim men who move with purpose and dress with conviction.",
+            "text_style": "subtitle"
           }
         },
         "button": {
-          "type": "button",
+          "type": "buttons",
           "settings": {
-            "button_label": "Shop All",
-            "button_link": "shopify:\/\/collections\/all",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_link_2": "",
+            "button_label_1": "Shop Now",
+            "button_link_1": "shopify://collections/all",
+            "button_style_secondary_1": false,
+            "button_label_2": "Our Story",
+            "button_link_2": "shopify://pages/about",
             "button_style_secondary_2": true
           }
         }
       },
-      "block_order": ["heading", "caption", "text", "button"],
+      "block_order": ["heading", "subheading", "button"],
+      "settings": {
+        "image_overlay_opacity": 50,
+        "adapt_height_to_first_image": false,
+        "show_text_box": true,
+        "desktop_content_position": "middle-left",
+        "desktop_content_alignment": "left",
+        "color_scheme": "scheme-4",
+        "mobile_content_alignment": "left",
+        "stack_images_on_mobile": false,
+        "show_text_below": true,
+        "padding_top": 160,
+        "padding_bottom": 160
+      }
+    },
+    "announcement": {
+      "type": "rich-text",
+      "blocks": {
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Free shipping on orders over $100 AUD &nbsp;·&nbsp; All shorts go below the knee &nbsp;·&nbsp; Sizes S / M / L / XL</p>"
+          }
+        }
+      },
+      "block_order": ["text"],
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
-        "color_scheme": "scheme-4",
+        "color_scheme": "scheme-5",
         "full_width": true,
-        "padding_top": 100,
-        "padding_bottom": 100
+        "padding_top": 20,
+        "padding_bottom": 20
       }
     },
-    "featured_collection": {
+    "featured-collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "Shop Now",
+        "title": "The Collection",
         "heading_size": "h2",
-        "description": "",
-        "show_description": false,
+        "description": "Three colourways. One standard. Engineered to cover, perform, and endure.",
+        "show_description": true,
         "description_style": "body",
         "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
+        "products_to_show": 3,
+        "columns_desktop": 3,
         "color_scheme": "scheme-1",
         "full_width": false,
         "show_view_all": true,
@@ -70,9 +87,44 @@
         "show_vendor": false,
         "show_rating": false,
         "quick_add": "standard",
-        "columns_mobile": "2",
-        "padding_top": 60,
-        "padding_bottom": 60
+        "columns_mobile": "1",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "brand-mission": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Why Rejal Exists.",
+            "heading_size": "h2"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>For too long, the activewear market has ignored Muslim men. Shorts that stop at mid-thigh. Designs that sacrifice modesty for performance. We were tired of it — so we built the alternative. Rejal means \"men\" in Arabic. This brand is for us, by us.</p>"
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "button_label": "Read Our Story",
+            "button_link": "shopify://pages/about",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": ["heading", "text", "button"],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-3",
+        "full_width": true,
+        "padding_top": 100,
+        "padding_bottom": 100
       }
     },
     "features": {
@@ -81,8 +133,8 @@
         "col1": {
           "type": "column",
           "settings": {
-            "title": "Free Shipping",
-            "text": "<p>On all orders over $75. No code needed at checkout.<\/p>",
+            "title": "Below Knee",
+            "text": "<p>Every pair lands below the knee — meeting the modesty requirements of Muslim men without compromise.</p>",
             "link_label": "",
             "link": ""
           }
@@ -90,8 +142,8 @@
         "col2": {
           "type": "column",
           "settings": {
-            "title": "Easy Returns",
-            "text": "<p>30-day hassle-free returns on everything we sell.<\/p>",
+            "title": "Performance Built",
+            "text": "<p>Lightweight, breathable fabric with zip pockets, elastic waistband, and ribbed cuffs. Made to move.</p>",
             "link_label": "",
             "link": ""
           }
@@ -99,29 +151,38 @@
         "col3": {
           "type": "column",
           "settings": {
-            "title": "Secure Checkout",
-            "text": "<p>Your payment info is always protected and encrypted.<\/p>",
+            "title": "Free Shipping",
+            "text": "<p>Free shipping on all Australian orders over $100 AUD. No codes. No fuss.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "col4": {
+          "type": "column",
+          "settings": {
+            "title": "Sizes S–XL",
+            "text": "<p>Available in Small, Medium, Large, and Extra Large. Limited stock per colourway — grab yours.</p>",
             "link_label": "",
             "link": ""
           }
         }
       },
-      "block_order": ["col1", "col2", "col3"],
+      "block_order": ["col1", "col2", "col3", "col4"],
       "settings": {
-        "title": "",
+        "title": "What Makes Rejal Different",
         "heading_size": "h2",
         "image_width": "full",
         "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "center",
+        "columns_desktop": 4,
+        "column_alignment": "left",
         "background_style": "none",
         "button_label": "",
         "button_link": "",
         "color_scheme": "scheme-2",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
-        "padding_top": 60,
-        "padding_bottom": 60
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     },
     "newsletter": {
@@ -130,13 +191,13 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Stay in the loop"
+            "heading": "Join the Community"
           }
         },
         "subheading": {
           "type": "subheading",
           "settings": {
-            "subheading": "Get early access to new arrivals, exclusive offers, and more."
+            "subheading": "New drops, restocks, and exclusive offers — straight to your inbox."
           }
         },
         "email_form": {
@@ -146,12 +207,12 @@
       },
       "block_order": ["heading", "subheading", "email_form"],
       "settings": {
-        "color_scheme": "scheme-3",
+        "color_scheme": "scheme-4",
         "full_width": true,
-        "padding_top": 60,
-        "padding_bottom": 60
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     }
   },
-  "order": ["hero", "featured_collection", "features", "newsletter"]
+  "order": ["image-banner", "announcement", "featured-collection", "brand-mission", "features", "newsletter"]
 }

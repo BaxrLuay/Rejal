@@ -1,0 +1,180 @@
+/* Rejal Brand CSS */
+
+/* Typography */
+h1, h2, h3, h4, h5, h6,
+.h0, .h1, .h2, .h3, .h4, .h5, .h6,
+.heading {
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+
+body, p, li, span, input, textarea, select, button {
+  line-height: 1.7;
+}
+
+/* Announcement bar — tight tracking */
+.announcement-bar__message {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Header — clean border remove */
+.header-wrapper {
+  border-bottom: 1px solid rgba(60, 73, 63, 0.12);
+}
+
+/* Buttons — sharp, no radius, strong hover */
+.button,
+.shopify-payment-button__button,
+.btn {
+  border-radius: 0 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  font-size: 1.2rem;
+  transition: opacity 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              background-color 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.button:hover,
+.shopify-payment-button__button:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.button:active,
+.shopify-payment-button__button:active {
+  transform: translateY(0);
+}
+
+/* Variant pills — sharp corners */
+.swatch,
+.swatch__input + .swatch__label {
+  border-radius: 0 !important;
+}
+
+/* Product cards — lift on hover */
+.card-wrapper {
+  transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card-wrapper:hover {
+  transform: translateY(-4px);
+}
+
+.card__heading a {
+  transition: opacity 0.2s ease;
+}
+
+.card__heading a:hover {
+  opacity: 0.65;
+}
+
+/* Collection grid — portrait breathing room */
+.collection .card__media {
+  aspect-ratio: 3/4;
+  overflow: hidden;
+}
+
+/* Section headings — editorial spacing */
+.featured-collection__title,
+.multicolumn__title,
+.rich-text__heading,
+.newsletter__heading {
+  letter-spacing: -0.04em;
+}
+
+/* Multicolumn feature blocks */
+.multicolumn-card__title {
+  letter-spacing: -0.02em;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Rich text sections — generous body */
+.rich-text__text p {
+  font-size: 1.7rem;
+  line-height: 1.8;
+  max-width: 68ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Product page — clean info panel */
+.product__title {
+  letter-spacing: -0.04em;
+  font-size: 3.2rem;
+}
+
+.product__price .price-item {
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+/* Size note under variant picker */
+.product__size-note {
+  font-size: 1.3rem;
+  color: rgba(60, 73, 63, 0.7);
+  margin-top: 0.8rem;
+  letter-spacing: 0.02em;
+}
+
+/* Image banner — large hero text */
+.banner__heading {
+  font-size: clamp(4rem, 8vw, 9rem) !important;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+}
+
+.banner__text {
+  font-size: 1.8rem;
+  line-height: 1.6;
+  max-width: 52ch;
+}
+
+/* Footer */
+.footer {
+  border-top: 1px solid rgba(240, 247, 244, 0.15);
+}
+
+/* Inputs — brand style */
+.field__input,
+.select__select {
+  border-radius: 0 !important;
+  border-color: rgba(60, 73, 63, 0.3);
+}
+
+.field__input:focus,
+.select__select:focus {
+  border-color: #3C493F;
+  outline: none;
+  box-shadow: none;
+}
+
+/* Price — AUD display */
+.price__container .price-item {
+  font-weight: 600;
+}
+
+/* Navigation links */
+.header__menu-item {
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.header__menu-item:hover {
+  opacity: 0.6;
+}
+
+/* Scroll reveal refinement */
+@media (prefers-reduced-motion: no-preference) {
+  .scroll-trigger.animate--slide-in {
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+}
