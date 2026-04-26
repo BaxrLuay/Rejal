@@ -1,0 +1,151 @@
+{%- style -%}
+  #rejal-hero-{{ section.id }} {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #rejal-hero-{{ section.id }} .rh-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url({{ 'hero-bg.png' | asset_url }});
+    background-size: cover;
+    background-position: center 60%;
+    transform: scale(1.04);
+    transition: transform 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  #rejal-hero-{{ section.id }}.rh-visible .rh-bg {
+    transform: scale(1);
+  }
+
+  #rejal-hero-{{ section.id }} .rh-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.08) 0%,
+      rgba(0, 0, 0, 0.22) 55%,
+      rgba(0, 0, 0, 0.42) 100%
+    );
+  }
+
+  #rejal-hero-{{ section.id }} .rh-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #rejal-hero-{{ section.id }} .rh-btn {
+    display: inline-block;
+    padding: 18px 56px;
+    font-family: var(--font-heading-family, sans-serif);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #ffffff;
+    border: 1.5px solid rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: background 0.25s ease, border-color 0.25s ease, transform 0.18s ease, opacity 0.6s ease 0.4s;
+  }
+
+  #rejal-hero-{{ section.id }}.rh-visible .rh-btn {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  #rejal-hero-{{ section.id }} .rh-btn:hover {
+    background: rgba(255, 255, 255, 0.16);
+    border-color: rgba(255, 255, 255, 1);
+    transform: translateY(-2px);
+  }
+
+  #rejal-hero-{{ section.id }} .rh-btn:active {
+    transform: translateY(0);
+    background: rgba(255, 255, 255, 0.24);
+  }
+
+  #rejal-hero-{{ section.id }} .rh-btn:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.8);
+    outline-offset: 4px;
+  }
+
+  @media (max-width: 749px) {
+    #rejal-hero-{{ section.id }} .rh-btn {
+      padding: 16px 40px;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+    }
+  }
+{%- endstyle -%}
+
+<div id="rejal-hero-{{ section.id }}" class="rejal-hero">
+  <div class="rh-bg"></div>
+  <div class="rh-overlay"></div>
+  <div class="rh-content">
+    <a
+      href="{{ section.settings.button_link | default: '/collections/all' }}"
+      class="rh-btn"
+    >
+      {{- section.settings.button_label | default: 'Explore Range' -}}
+    </a>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var hero = document.getElementById('rejal-hero-{{ section.id }}');
+    if (!hero) return;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('rh-visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.05 });
+    io.observe(hero);
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Rejal Hero",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "button_label",
+      "default": "Explore Range",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rejal Hero"
+    }
+  ]
+}
+{% endschema %}
