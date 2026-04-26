@@ -22,7 +22,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>رجالMen. Built for them. By them.</p>"
+            "text": "<p>رجال. Men. Built for them. By them.</p>"
           }
         }
       },
@@ -52,7 +52,7 @@
         "text1": {
           "type": "text",
           "settings": {
-            "text": "<p>Walk into any sportswear storeNike, Adidas, Under Armourand you'll find the same thing: shorts that cut off above the knee. Maybe mid-thigh if you're lucky. For Muslim men, this isn't just a style preference. It's a matter of faith. The awrahthe parts of the body a Muslim man must keep coveredextends from the navel to below the knee. Every pair of mainstream athletic shorts fails this requirement entirely.</p>"
+            "text": "<p>Walk into any sportswear store (Nike, Adidas, Under Armour) and you'll find the same thing: shorts that cut off above the knee. Maybe mid-thigh if you're lucky. For Muslim men, this isn't just a style preference. It's a matter of faith. The awrah (the parts of the body a Muslim man must keep covered) extends from the navel to below the knee. Every pair of mainstream athletic shorts fails this requirement entirely.</p>"
           }
         },
         "text2": {
@@ -99,7 +99,7 @@
           "type": "column",
           "settings": {
             "title": "Performance Always",
-            "text": "<p>Modesty and performance are not opposites. We engineer both into every pairbecause you deserve both.</p>",
+            "text": "<p>Modesty and performance are not opposites. We engineer both into every pair, because you deserve both.</p>",
             "link_label": "",
             "link": ""
           }

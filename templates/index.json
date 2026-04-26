@@ -77,7 +77,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>For too long, the activewear market has ignored Muslim men. Shorts that stop at mid-thigh. Designs that sacrifice modesty for performance. We were tired of itso we built the alternative. Rejal means \"men\" in Arabic. This brand is for us, by us.</p>"
+            "text": "<p>For too long, the activewear market has ignored Muslim men. Shorts that stop at mid-thigh. Designs that sacrifice modesty for performance. We were tired of it, so we built the alternative. Rejal means \"men\" in Arabic. This brand is for us, by us.</p>"
           }
         },
         "button": {
@@ -106,7 +106,7 @@
           "type": "column",
           "settings": {
             "title": "Below Knee",
-            "text": "<p>Every pair lands below the kneemeeting the modesty requirements of Muslim men without compromise.</p>",
+            "text": "<p>Every pair lands below the knee, meeting the modesty requirements of Muslim men without compromise.</p>",
             "link_label": "",
             "link": ""
           }
@@ -133,7 +133,7 @@
           "type": "column",
           "settings": {
             "title": "Sizes S–XL",
-            "text": "<p>Available in Small, Medium, Large, and Extra Large. Limited stock per colourwaygrab yours.</p>",
+            "text": "<p>Available in Small, Medium, Large, and Extra Large. Limited stock per colourway. Grab yours.</p>",
             "link_label": "",
             "link": ""
           }
@@ -169,7 +169,7 @@
         "subheading": {
           "type": "paragraph",
           "settings": {
-            "text": "<p>New drops, restocks, and exclusive offersstraight to your inbox.</p>"
+            "text": "<p>New drops, restocks, and exclusive offers. Straight to your inbox.</p>"
           }
         },
         "email_form": {
