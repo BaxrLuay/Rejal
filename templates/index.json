@@ -1,47 +1,19 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-    "image-banner": {
-      "type": "image-banner",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Built for the Faithful.",
-            "heading_size": "h0"
-          }
-        },
-        "subheading": {
-          "type": "text",
-          "settings": {
-            "text": "Below-knee athletic shorts crafted for Muslim men who move with purpose and dress with conviction.",
-            "text_style": "subtitle"
-          }
-        },
-        "button": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Shop Now",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": false,
-            "button_label_2": "Our Story",
-            "button_link_2": "shopify://pages/about",
-            "button_style_secondary_2": true
-          }
-        }
-      },
-      "block_order": ["heading", "subheading", "button"],
+    "rejal-hero": {
+      "type": "rejal-hero",
       "settings": {
-        "image_overlay_opacity": 50,
-        "adapt_height_to_first_image": false,
-        "show_text_box": true,
-        "desktop_content_position": "middle-left",
-        "desktop_content_alignment": "left",
-        "color_scheme": "scheme-4",
-        "mobile_content_alignment": "left",
-        "stack_images_on_mobile": false,
-        "show_text_below": true,
-        "padding_top": 160,
-        "padding_bottom": 160
+        "button_label": "Explore Range",
+        "button_link": "shopify://collections/all"
       }
     },
     "announcement": {
@@ -69,7 +41,7 @@
       "settings": {
         "title": "The Collection",
         "heading_size": "h2",
-        "description": "Three colourways. One standard. Engineered to cover, perform, and endure.",
+        "description": "<p>Three colourways. One standard. Engineered to cover, perform, and endure.</p>",
         "show_description": true,
         "description_style": "body",
         "collection": "all",
@@ -195,9 +167,9 @@
           }
         },
         "subheading": {
-          "type": "subheading",
+          "type": "paragraph",
           "settings": {
-            "subheading": "New drops, restocks, and exclusive offers — straight to your inbox."
+            "text": "<p>New drops, restocks, and exclusive offers — straight to your inbox.</p>"
           }
         },
         "email_form": {
@@ -214,5 +186,5 @@
       }
     }
   },
-  "order": ["image-banner", "announcement", "featured-collection", "brand-mission", "features", "newsletter"]
+  "order": ["rejal-hero", "announcement", "featured-collection", "brand-mission", "features", "newsletter"]
 }

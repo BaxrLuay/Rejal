@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
@@ -13,19 +22,21 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>رجال — Men. Built for them. By them.</p>",
-            "text_style": "subtitle"
+            "text": "<p>رجال — Men. Built for them. By them.</p>"
           }
         }
       },
-      "block_order": ["heading", "text"],
+      "block_order": [
+        "heading",
+        "text"
+      ],
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
         "color_scheme": "scheme-4",
         "full_width": true,
-        "padding_top": 120,
-        "padding_bottom": 120
+        "padding_top": 100,
+        "padding_bottom": 100
       }
     },
     "story": {
@@ -41,33 +52,28 @@
         "text1": {
           "type": "text",
           "settings": {
-            "text": "<p>Walk into any sportswear store — Nike, Adidas, Under Armour — and you'll find the same thing: shorts that cut off above the knee. Maybe mid-thigh if you're lucky. For Muslim men, this isn't just a style preference. It's a matter of faith. The awrah — the parts of the body a Muslim man must keep covered — extends from the navel to below the knee. Every pair of mainstream athletic shorts fails this requirement entirely.</p>",
-            "text_style": "body"
+            "text": "<p>Walk into any sportswear store — Nike, Adidas, Under Armour — and you'll find the same thing: shorts that cut off above the knee. Maybe mid-thigh if you're lucky. For Muslim men, this isn't just a style preference. It's a matter of faith. The awrah — the parts of the body a Muslim man must keep covered — extends from the navel to below the knee. Every pair of mainstream athletic shorts fails this requirement entirely.</p>"
           }
         },
         "text2": {
           "type": "text",
           "settings": {
-            "text": "<p>We tried alternatives. Long pants in summer heat. Layering shorts over leggings. Buying ill-fitting \"modest\" options that weren't designed for sport at all. None of it worked. The market was saturated with options for everyone — except us.</p>",
-            "text_style": "body"
+            "text": "<p>We tried alternatives. Long pants in summer heat. Layering shorts over leggings. Buying ill-fitting \"modest\" options that weren't designed for sport at all. None of it worked. The market was saturated with options for everyone — except us.</p>"
           }
         },
         "text3": {
           "type": "text",
           "settings": {
-            "text": "<p>So we built Rejal. Named after the Arabic word for \"men\", Rejal exists to fill a gap the industry ignored for decades. Below-knee shorts engineered for athletic performance — with zip pockets, elastic waistbands, ribbed cuffs, and breathable fabric. Designed to look sharp at the gym, the park, or anywhere in between. No compromises on coverage. No compromises on quality.</p>",
-            "text_style": "body"
-          }
-        },
-        "text4": {
-          "type": "text",
-          "settings": {
-            "text": "<p>This is for every Muslim brother who has ever had to choose between his sport and his deen. You no longer have to choose. Welcome to Rejal.</p>",
-            "text_style": "body"
+            "text": "<p>So we built Rejal. Named after the Arabic word for \"men\", Rejal exists to fill a gap the industry ignored for decades. Below-knee shorts engineered for athletic performance — with zip pockets, elastic waistbands, ribbed cuffs, and breathable fabric. Designed to look sharp at the gym, the park, or anywhere in between. No compromises on coverage. No compromises on quality.</p><p>This is for every Muslim brother who has ever had to choose between his sport and his deen. You no longer have to choose. Welcome to Rejal.</p>"
           }
         }
       },
-      "block_order": ["heading", "text1", "text2", "text3", "text4"],
+      "block_order": [
+        "heading",
+        "text1",
+        "text2",
+        "text3"
+      ],
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "left",
@@ -108,17 +114,21 @@
           }
         }
       },
-      "block_order": ["col1", "col2", "col3"],
+      "block_order": [
+        "col1",
+        "col2",
+        "col3"
+      ],
       "settings": {
         "title": "What We Stand For",
         "heading_size": "h2",
         "image_width": "full",
         "image_ratio": "adapt",
+        "button_label": "Shop the Collection",
+        "button_link": "shopify://collections/all",
         "columns_desktop": 3,
         "column_alignment": "left",
         "background_style": "none",
-        "button_label": "Shop the Collection",
-        "button_link": "shopify://collections/all",
         "color_scheme": "scheme-3",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
@@ -127,5 +137,9 @@
       }
     }
   },
-  "order": ["hero", "story", "values"]
+  "order": [
+    "hero",
+    "story",
+    "values"
+  ]
 }
